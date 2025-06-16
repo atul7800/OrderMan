@@ -147,7 +147,7 @@ src/
 
 ## 📹 Demo
 
-**Live Link**: [Deployed App](https://order-man-flax.vercel.app/create-order)
+**Live Link**: [Deployed App](https://order-man-flax.vercel.app/)
 
 ## 🙌 Author
 
