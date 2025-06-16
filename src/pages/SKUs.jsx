@@ -23,8 +23,9 @@ export default function SKUPage() {
     fetch(`${import.meta.env.VITE_API_URL}/skus`)
       .then((res) => res.json())
       .then((data) => {
-        setSkus(data);
-        setFilteredSkus(data);
+        const sortedSkusByCreationTime = [...data].sort((a, b) => b.id - a.id);
+        setSkus(sortedSkusByCreationTime);
+        setFilteredSkus(sortedSkusByCreationTime);
       });
   }, []);
 
@@ -84,7 +85,7 @@ export default function SKUPage() {
         body: JSON.stringify(newSKU),
       });
       const added = await res.json();
-      setSkus([...skus, added]);
+      setSkus([added, ...skus]);
       showToast("SKU Added", "success");
     }
 

@@ -90,6 +90,27 @@
       "price": 1499,
       "active": false,
       "id": 14
+    },
+    {
+      "name": "Remote",
+      "code": "#87HL",
+      "price": 500,
+      "active": true,
+      "id": 15
+    },
+    {
+      "name": "Powerbank",
+      "code": "#P09GH",
+      "price": 1500,
+      "active": true,
+      "id": 16
+    },
+    {
+      "name": "Adapter",
+      "code": "#A87KH",
+      "price": 299,
+      "active": true,
+      "id": 17
     }
   ],
   "orders": [
@@ -380,6 +401,64 @@
       "status": "New",
       "createdAt": "2025-06-16T11:15:01.632Z",
       "id": 114
+    },
+    {
+      "name": "Lark",
+      "email": "lark@gmail.com",
+      "phone": "5645348967",
+      "address": "Dwarka",
+      "city": "Delhi",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 3,
+          "qty": 1
+        },
+        {
+          "skuId": 4,
+          "qty": 1
+        }
+      ],
+      "total": 1098,
+      "status": "New",
+      "createdAt": "2025-06-16T13:13:36.048Z",
+      "id": 115
+    },
+    {
+      "name": "Roshni",
+      "email": "roshni@gmail.com",
+      "phone": "7856342387",
+      "address": "Mohali",
+      "city": "Punjab",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 17,
+          "qty": 1
+        }
+      ],
+      "total": 299,
+      "status": "New",
+      "createdAt": "2025-06-16T14:28:12.881Z",
+      "id": 116
+    },
+    {
+      "name": "Maza",
+      "email": "maza@gmail.com",
+      "phone": "9954962536",
+      "address": "Bhopal",
+      "city": "MP",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 11,
+          "qty": 1
+        }
+      ],
+      "total": 7999,
+      "status": "New",
+      "createdAt": "2025-06-16T14:36:56.769Z",
+      "id": 117
     }
   ]
 }

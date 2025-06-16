@@ -66,7 +66,6 @@ export default function CreateOrderPage() {
     }
 
     setErrors(newErrors);
-    console.log("Errors : ", newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
     const order = {
@@ -187,31 +186,48 @@ export default function CreateOrderPage() {
           {errors.items && (
             <p className="text-red-500 text-sm text-left">{errors.items}</p>
           )}
+
           <h3 className="text-lg font-semibold text-gray-700 mb-2">
             Order Items
           </h3>
           {form.items.map((item, i) => (
             <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
-              <SKUSelect
-                value={item.skuId}
-                onChange={(val) => updateItem(i, "skuId", val)}
-              />
+              <div>
+                <SKUSelect
+                  value={item.skuId}
+                  onChange={(val) => updateItem(i, "skuId", val)}
+                />
+                <div className="min-h-[20px]">
+                  {errors[`skuId_${i}`] && (
+                    <p className="text-red-500 text-sm mt-1 text-left">
+                      {errors[`skuId_${i}`]}
+                    </p>
+                  )}
+                </div>
+              </div>
 
-              <input
-                type="number"
-                min={1}
-                value={item.qty}
-                onChange={(e) =>
-                  updateItem(i, "qty", Math.max(1, parseInt(e.target.value)))
-                }
-                className="p-3 border border-gray-300 rounded-lg"
-              />
-              <div className="flex items-center px-4 border border-gray-300 rounded-lg bg-gray-100">
-                ₹
-                {(() => {
-                  const sku = skus.find((s) => s.id === parseInt(item.skuId));
-                  return sku ? sku.price * item.qty : 0;
-                })()}
+              <div>
+                <input
+                  type="number"
+                  min={1}
+                  value={item.qty}
+                  onChange={(e) =>
+                    updateItem(i, "qty", Math.max(1, parseInt(e.target.value)))
+                  }
+                  className="p-3 border border-gray-300 rounded-lg"
+                />
+                <div className="min-h-[20px]"></div>
+              </div>
+
+              <div>
+                <div className="flex items-center p-3 border border-gray-300 rounded-lg bg-gray-100">
+                  ₹
+                  {(() => {
+                    const sku = skus.find((s) => s.id === parseInt(item.skuId));
+                    return sku ? sku.price * item.qty : 0;
+                  })()}
+                </div>
+                <div className="min-h-[20px]"></div>
               </div>
             </div>
           ))}

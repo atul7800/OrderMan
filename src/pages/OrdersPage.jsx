@@ -11,7 +11,7 @@ export default function OrdersPage() {
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
   const [selectedOrders, setSelectedOrders] = useState([]);
-  const [sortAsc, setSortAsc] = useState(true);
+  const [sortAsc, setSortAsc] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [nextStatus, setNextStatus] = useState("");
@@ -20,6 +20,7 @@ export default function OrdersPage() {
   const fetchOrders = async () => {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/orders`);
     const data = await res.json();
+
     setOrders(data);
   };
 
