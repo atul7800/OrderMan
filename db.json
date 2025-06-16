@@ -67,7 +67,7 @@
       "name": "Ergonomic Office Chair",
       "code": "EC011",
       "price": 7999,
-      "active": true,
+      "active": false,
       "id": 11
     },
     {

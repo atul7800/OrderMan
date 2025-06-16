@@ -18,6 +18,7 @@ export default function SKUPage() {
   const [search, setSearch] = useState("");
   const {showToast} = useToast();
   const [currentPage, setCurrentPage] = useState(1);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/skus`)
@@ -52,10 +53,19 @@ export default function SKUPage() {
   );
 
   const handleAdd = async () => {
-    if (!name || !code || price < 0) {
-      showToast("Invalid input", "error");
-      return;
+    const newErrors = {};
+    if (!name.trim()) newErrors.skuName = "SKU name is required";
+    if (!code.trim()) newErrors.skuCode = "SKU code is required";
+    if (price === "") {
+      newErrors.skuPrice = "Price is required";
+    } else if (isNaN(price) || Number(price) < 0) {
+      newErrors.skuPrice = "Price must be a pegative number";
     }
+
+    setErrors(newErrors);
+
+    //return if any error are there
+    if (Object.keys(newErrors).length > 0) return;
 
     if (editingId) {
       const res = await fetch(
@@ -93,6 +103,7 @@ export default function SKUPage() {
     setCode("");
     setPrice("");
     setEditingId(null);
+    setErrors({});
   };
 
   const handleEdit = (sku) => {
@@ -195,32 +206,66 @@ export default function SKUPage() {
 
       <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 ">
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="SKU Name"
-            className="p-2 border border-gray-300 rounded-lg"
-          />
-          <input
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            placeholder="SKU Code"
-            className="p-2 border border-gray-300 rounded-lg"
-          />
-          <input
-            type="number"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            placeholder="Price"
-            className="p-2 border border-gray-300 rounded-lg"
-          />
-          <Button
-            onClick={handleAdd}
-            className="w-full flex items-center justify-center"
-          >
-            <FiPlus size={18} className="mr-2" />{" "}
-            {editingId ? "Save" : "Add SKU"}
-          </Button>
+          <div className="mx-auto">
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="SKU Name"
+              className="p-2 border border-gray-300 rounded-lg"
+            />
+            {errors.skuName && (
+              <p className="text-red-500 text-sm text-left">{errors.skuName}</p>
+            )}
+          </div>
+
+          <div className="mx-auto">
+            <input
+              value={code}
+              onChange={(e) => {
+                const value = e.target.value;
+
+                if (value.length <= 10) {
+                  setCode(value);
+                  setErrors((prev) => ({...prev, skuCode: ""}));
+                } else {
+                  setErrors((prev) => ({
+                    ...prev,
+                    skuCode: "Max 10 characters allowed",
+                  }));
+                }
+              }}
+              placeholder="SKU Code"
+              className="p-2 border border-gray-300 rounded-lg"
+            />
+
+            {errors.skuCode && (
+              <p className="text-red-500 text-sm text-left">{errors.skuCode}</p>
+            )}
+          </div>
+          <div className="mx-auto">
+            <input
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="Price"
+              className="p-2 border border-gray-300 rounded-lg"
+            />
+            {errors.skuPrice && (
+              <p className="text-red-500 text-sm text-left">
+                {errors.skuPrice}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <Button
+              onClick={handleAdd}
+              className="w-full flex items-center justify-center"
+            >
+              <FiPlus size={18} className="mr-2" />{" "}
+              {editingId ? "Save" : "Add SKU"}
+            </Button>
+          </div>
         </div>
       </div>
 

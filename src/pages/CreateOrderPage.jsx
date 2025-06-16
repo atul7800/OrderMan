@@ -134,9 +134,23 @@ export default function CreateOrderPage() {
 
           <div>
             <input
+              type="tel"
               placeholder="Phone"
               value={form.phone}
-              onChange={(e) => setForm({...form, phone: e.target.value})}
+              onChange={(e) => {
+                const val = e.target.value;
+                if (/^\d*$/.test(val)) {
+                  if (val.length <= 10) {
+                    setForm({...form, phone: val});
+                    setErrors((prev) => ({...prev, phone: ""}));
+                  } else {
+                    setErrors((prev) => ({
+                      ...prev,
+                      phone: "Max 10 digits allowed",
+                    }));
+                  }
+                }
+              }}
               className="w-full p-3 border border-gray-300 rounded-lg "
             />
             {errors.phone && (
