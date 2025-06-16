@@ -57,6 +57,19 @@ A fully functional React-based Order Management System with modular SKU and Orde
 
 ---
 
+## 💪 Bonus (Optional) — Implemented
+
+- ✅ **Active / Inactive SKU functionality**  
+  - Users can toggle SKUs between Active and Inactive  
+  - Only **Active SKUs** are shown in the order creation dropdown  
+
+- ✅ **Live Deployment**  
+  - Frontend hosted on **Vercel**  
+  - Backend (JSON Server) hosted on **Render**  
+  - `.env` supports switching between local and production URLs
+
+---
+
 ## 🔧 Setup Instructions
 
 ```bash
