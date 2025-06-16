@@ -1,0 +1,385 @@
+{
+  "skus": [
+    {
+      "name": "Mechanical Keyboard",
+      "code": "MK002",
+      "price": 1500,
+      "active": true,
+      "id": 2
+    },
+    {
+      "name": "USB-C Cable",
+      "code": "UC003",
+      "price": 299,
+      "active": true,
+      "id": 3
+    },
+    {
+      "name": "Wireless Mouse",
+      "code": "WM004",
+      "price": 799,
+      "active": true,
+      "id": 4
+    },
+    {
+      "name": "Gaming Headset",
+      "code": "GH005",
+      "price": 2500,
+      "active": false,
+      "id": 5
+    },
+    {
+      "name": "Laptop Stand",
+      "code": "LS006",
+      "price": 1099,
+      "active": true,
+      "id": 6
+    },
+    {
+      "name": "Bluetooth Speaker",
+      "code": "BS007",
+      "price": 1799,
+      "active": true,
+      "id": 7
+    },
+    {
+      "name": "Webcam HD",
+      "code": "WH008",
+      "price": 1299,
+      "active": true,
+      "id": 8
+    },
+    {
+      "name": "Portable SSD 1TB",
+      "code": "PS009",
+      "price": 5499,
+      "active": true,
+      "id": 9
+    },
+    {
+      "name": "Noise Cancelling Earbuds",
+      "code": "NE010",
+      "price": 3499,
+      "active": false,
+      "id": 10
+    },
+    {
+      "name": "Ergonomic Office Chair",
+      "code": "EC011",
+      "price": 7999,
+      "active": true,
+      "id": 11
+    },
+    {
+      "name": "4K Monitor",
+      "code": "4K012",
+      "price": 18999,
+      "active": true,
+      "id": 12
+    },
+    {
+      "name": "Wireless Charger Pad",
+      "code": "WC013",
+      "price": 999,
+      "active": true,
+      "id": 13
+    },
+    {
+      "name": "Smart Light Strip",
+      "code": "SL014",
+      "price": 1499,
+      "active": false,
+      "id": 14
+    }
+  ],
+  "orders": [
+    {
+      "id": 101,
+      "name": "Atul Gupta",
+      "email": "atul@example.com",
+      "phone": "9876543210",
+      "address": "Street 1",
+      "city": "Delhi",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 2
+        },
+        {
+          "skuId": 3,
+          "qty": 1
+        }
+      ],
+      "total": 1497,
+      "status": "New",
+      "createdAt": "2024-06-13T10:00:00Z"
+    },
+    {
+      "id": 102,
+      "name": "Riya Sharma",
+      "email": "riya@example.com",
+      "phone": "9123456789",
+      "address": "Lane 5",
+      "city": "Mumbai",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 1599,
+      "status": "Delivered",
+      "createdAt": "2024-06-12T09:30:00Z"
+    },
+    {
+      "id": 103,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 2198,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "name": "Atul Gupta",
+      "email": "abcd@gmail.com",
+      "phone": "8217362950",
+      "address": "Kormangala",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": "1",
+          "qty": 3
+        }
+      ],
+      "total": 1797,
+      "status": "New",
+      "createdAt": "2025-06-14T19:39:45.478Z",
+      "id": 104
+    },
+    {
+      "id": 105,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 657,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "id": 106,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 2198,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "id": 107,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 2198,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "id": 108,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 2198,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "id": 109,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 2198,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "id": 110,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 2198,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "id": 111,
+      "name": "Karan Mehta",
+      "email": "karan@example.com",
+      "phone": "9988776655",
+      "address": "Park Ave",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 1,
+          "qty": 1
+        },
+        {
+          "skuId": 2,
+          "qty": 1
+        }
+      ],
+      "total": 2198,
+      "status": "Cancelled",
+      "createdAt": "2024-06-11T14:45:00Z"
+    },
+    {
+      "name": "Ishita",
+      "email": "ishita675@gmail.com",
+      "phone": "7845237898",
+      "address": "Indira Nagar",
+      "city": "Bangalore",
+      "country": "India",
+      "items": [
+        {
+          "skuId": "2",
+          "qty": 1
+        }
+      ],
+      "total": 1500,
+      "status": "New",
+      "createdAt": "2025-06-15T20:20:59.158Z",
+      "id": 112
+    },
+    {
+      "name": "Atul ",
+      "email": "atul@gmail.com",
+      "phone": "1234567890",
+      "address": "Kengeri",
+      "city": "Bengaluru",
+      "country": "India",
+      "items": [
+        {
+          "skuId": "3",
+          "qty": 1
+        }
+      ],
+      "total": 299,
+      "status": "New",
+      "createdAt": "2025-06-15T20:49:31.977Z",
+      "id": 113
+    },
+    {
+      "name": "Kejal",
+      "email": "kejal@gmail.com",
+      "phone": "7745328956",
+      "address": "Shakarpur",
+      "city": "Delhi",
+      "country": "India",
+      "items": [
+        {
+          "skuId": 5,
+          "qty": 1
+        }
+      ],
+      "total": 0,
+      "status": "New",
+      "createdAt": "2025-06-16T11:15:01.632Z",
+      "id": 114
+    }
+  ]
+}
