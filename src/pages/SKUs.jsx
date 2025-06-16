@@ -20,7 +20,7 @@ export default function SKUPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch("http://localhost:3000/skus")
+    fetch(`${import.meta.env.VITE_API_URL}/skus`)
       .then((res) => res.json())
       .then((data) => {
         setSkus(data);
@@ -57,11 +57,19 @@ export default function SKUPage() {
     }
 
     if (editingId) {
-      const res = await fetch(`http://localhost:3000/skus/${editingId}`, {
-        method: "PUT",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name, code, price: Number(price), active: true}),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/skus/${editingId}`,
+        {
+          method: "PUT",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({
+            name,
+            code,
+            price: Number(price),
+            active: true,
+          }),
+        }
+      );
       const updatedSku = await res.json();
       const updated = skus.map((sku) =>
         sku.id === editingId ? updatedSku : sku
@@ -70,7 +78,7 @@ export default function SKUPage() {
       showToast("SKU Updated", "success");
     } else {
       const newSKU = {name, code, price: Number(price), active: true};
-      const res = await fetch("http://localhost:3000/skus", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/skus`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newSKU),
@@ -94,7 +102,9 @@ export default function SKUPage() {
   };
 
   const handleDelete = async (skuId) => {
-    await fetch(`http://localhost:3000/skus/${skuId}`, {method: "DELETE"});
+    await fetch(`${import.meta.env.VITE_API_URL}/skus/${skuId}`, {
+      method: "DELETE",
+    });
     setSkus((prev) => prev.filter((sku) => sku.id !== skuId));
     showToast("SKU Deleted", "success");
   };
@@ -103,13 +113,16 @@ export default function SKUPage() {
     const updatedStatus = currentStatus ? false : true;
 
     try {
-      const res = await fetch(`http://localhost:3000/skus/${sku.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({...sku, active: updatedStatus}),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/skus/${sku.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({...sku, active: updatedStatus}),
+        }
+      );
 
       if (res.ok) {
         setSkus((prevSkus) =>

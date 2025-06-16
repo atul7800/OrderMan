@@ -18,7 +18,7 @@ export default function OrdersPage() {
   const ORDERS_PER_PAGE = 10;
 
   const fetchOrders = async () => {
-    const res = await fetch("http://localhost:3000/orders");
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/orders`);
     const data = await res.json();
     setOrders(data);
   };

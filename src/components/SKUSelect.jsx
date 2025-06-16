@@ -15,7 +15,9 @@ export default function SKUSelect({value, onChange}) {
   useEffect(() => {
     const fetchOptions = async () => {
       const res = await fetch(
-        `http://localhost:3000/skus?_page=${page}&_limit=${PAGE_SIZE}&q=${search}&active=true`
+        `${
+          import.meta.env.VITE_API_URL
+        }/skus?_page=${page}&_limit=${PAGE_SIZE}&q=${search}&active=true`
       );
       const data = await res.json();
 

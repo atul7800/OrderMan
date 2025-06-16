@@ -75,7 +75,7 @@ export default function CreateOrderPage() {
       status: "New",
       createdAt: new Date().toISOString(),
     };
-    await fetch("http://localhost:3000/orders", {
+    await fetch(`${import.meta.env.VITE_API_URL}/orders`, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(order),
@@ -93,7 +93,7 @@ export default function CreateOrderPage() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/skus")
+    fetch(`${import.meta.env.VITE_API_URL}/skus`)
       .then((res) => res.json())
       .then((data) => setSkus(data.filter((s) => s.active)));
   }, []);
