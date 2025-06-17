@@ -76,7 +76,7 @@ A fully functional React-based Order Management System with modular SKU and Orde
 ```bash
 # 1. Clone the repo
 git clone https://github.com/atul7800/OrderMan.git
-cd oms
+cd OrderMan
 
 # 2. Install dependencies
 npm install
